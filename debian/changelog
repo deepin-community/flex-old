@@ -1,0 +1,376 @@
+flex-old (2.5.4a-10.1) unstable; urgency=medium
+
+  * Non maintainer upload by the Reproducible Builds team.
+  * No source change upload to rebuild on buildd with .buildinfo files.
+
+ -- Holger Levsen <holger@debian.org>  Tue, 29 Dec 2020 02:07:39 +0100
+
+flex-old (2.5.4a-10) unstable; urgency=low
+
+  * FTBFS: The buildd's still do not respect Build-Depends-Indep.
+    Duplicated the dependency into Build-Depends as a workaround for this
+    buildd flaw.
+
+ -- Tommi Vainikainen <tvainika@debian.org>  Tue, 24 May 2011 15:36:35 +0300
+
+flex-old (2.5.4a-9) unstable; urgency=low
+
+  * Adopt the package (Closes: #553704). 
+  * Fix the URL of the homepage (Closes: #503183).
+  * Rewriter rules using debhelper.
+  * Use config.{guess,sub} from autotools-dev (Closes: #535937).
+
+ -- Tommi Vainikainen <tvainika@debian.org>  Tue, 24 May 2011 09:38:15 +0300
+
+flex-old (2.5.4a-8) unstable; urgency=low
+
+  * orphan package. I am not using it, am no longer intrerested in
+    developing it, and it will take too much effort to bring it up to my
+    standards. It has a single reverse depends, bison++
+
+ -- Manoj Srivastava <srivasta@debian.org>  Sun, 01 Nov 2009 16:56:50 -0600
+
+flex-old (2.5.4a-7) unstable; urgency=low
+
+  * Bug fix: "flex-old: FTBFS: Cannot install docs", thanks to Daniel
+    Schepler                                              (Closes: #318532).
+
+ -- Manoj Srivastava <srivasta@debian.org>  Sun,  7 Aug 2005 20:00:42 -0500
+
+flex-old (2.5.4a-6) unstable; urgency=low
+
+  * FTBFS: missing build-depends. Bah. The buildd's do not respect
+    Build-Depends-Indep. Duplicated the dependency into Build-Depends as a
+    workaround for this buildd flaw. Also added file as a
+    build-dependency.                                     (Closes: #224388).
+
+ -- Manoj Srivastava <srivasta@debian.org>  Tue, 23 Dec 2003 14:22:46 -0600
+
+flex-old (2.5.4a-5) unstable; urgency=low
+
+  * Bug fix: "flex-old: Info pages don't display the full version number",
+    thanks to Akim Demaille. Since the 2.5.31 info pages do, this brings
+    the flex-old package back in sync.                   (Closes: #223797).
+
+ -- Manoj Srivastava <srivasta@debian.org>  Sat, 13 Dec 2003 13:01:16 -0600
+
+flex-old (2.5.4a-4) unstable; urgency=low
+
+  * Typo fixes in the description, thanks to Joshua Kwan <joshk@triplehelix.org>
+                                                            closes: Bug#210388
+
+ -- Manoj Srivastava <srivasta@debian.org>  Sat, 13 Sep 2003 14:55:29 -0500
+
+flex-old (2.5.4a-3) unstable; urgency=low
+
+  * *Sigh*. Really remove acinclude.m4, since it makes autoconf fail to
+    run.
+
+ -- Manoj Srivastava <srivasta@debian.org>  Mon,  1 Sep 2003 14:45:17 -0500
+
+flex-old (2.5.4a-2) unstable; urgency=low
+
+  * Fixed usage of chown root.root in the rules files.
+  * Added AM_MAINTAINER_MODE to .configure.in so that automatic remaking
+    does not occur.                                         closes: Bug#208190
+  * removed acinclude.m4, reran aclocal, and reran autoconf, to update the
+    auto-* files.
+
+ -- Manoj Srivastava <srivasta@debian.org>  Mon,  1 Sep 2003 13:11:17 -0500
+
+flex-old (2.5.4a-1) unstable; urgency=low
+
+  * Created a new package called flex-old so that people who have not yet
+    changed their lex files (or can't change them) and thus can't build
+    with the new flex have an option. This is a dead-end package, and
+    shall be removed at some point in the future.
+
+ -- Manoj Srivastava <srivasta@debian.org>  Sun,  4 May 2003 13:45:09 -0500
+
+flex (2.5.4a-33) unstable; urgency=low
+
+  * Continuing the process of gcc 3.2.x compatibility.      closes: Bug#185714
+
+ -- Manoj Srivastava <srivasta@acm.org>  Fri, 21 Mar 2003 13:00:19 -0600
+
+flex (2.5.4a-32) unstable; urgency=low
+
+  * There was a blank line in initscan.c that made it impossible to build
+    on buildds.                                              closes: Bug#185772
+
+ -- Manoj Srivastava <srivasta@acm.org>  Fri, 21 Mar 2003 12:34:13 -0600
+
+flex (2.5.4a-31) unstable; urgency=low
+
+  * Make FlexLexer have the std:: prefix         closes: Bug#181670, Bug#180446
+  * Fix flex.skl                                             closes: Bug#184393
+
+ -- Manoj Srivastava <srivasta@acm.org>  Fri, 21 Mar 2003 00:57:21 -0600
+
+flex (2.5.4a-30) unstable; urgency=low
+
+  * FlexLexer.h now include iostream, not iostream.h.
+                                                 closes: Bug#173943, Bug#180051
+  * Fix broken printf format                                 closes: Bug#174350
+  * The behaviour of flex was different based on what order options were
+    specified: option nomain before option noyywrap caused one set of
+    behaviours, reversing the order changes the behaviour, since nomain
+    seemed to reset noyywrap. This was fixed in scanl. and initscan.c. 
+                                                             closes: Bug#174259
+
+ -- Manoj Srivastava <srivasta@acm.org>  Sun,  9 Feb 2003 13:38:32 -0600
+
+flex (2.5.4a-29) unstable; urgency=low
+
+  * No longer provide /usr/doc link. Upgrade to latest policy version.
+
+ -- Manoj Srivastava <srivasta@debian.org>  Mon, 11 Nov 2002 23:17:14 -0600
+
+flex (2.5.4a-28) unstable; urgency=low
+
+  * Anotrher patch from Alexander Klauer, this one fixes a print format
+    problem.                                                 closes: Bug#161101
+
+ -- Manoj Srivastava <srivasta@debian.org>  Tue, 29 Oct 2002 17:35:13 -0600
+
+flex (2.5.4a-27) unstable; urgency=low
+
+  * Fix a flex segfult on very long lines. Many thanks to  Alexander
+    Klauer <Graf.Zahl@gmx.net> for detecting this bug and finding the
+    fix.                                                     closes: Bug#158518
+  * The package seems to build from sources on i386.         closes: Bug#159547
+
+ -- Manoj Srivastava <srivasta@debian.org>  Wed,  4 Sep 2002 19:24:56 -0500
+
+flex (2.5.4a-26) unstable; urgency=low
+
+  * use which instead of command -v
+  * Fixed a problem with locales in flex. Many thanks to
+    witchery@www.oz.or.kr and unichi Uekawa <dancer@netfort.gr.jp> for
+    discovering the problem, and patiently leading me through to a point
+    that I could actually reproduce the proble, and test the patch
+    provided by witchery@www.oz.or.kr.                       closes: Bug#147627
+
+ -- Manoj Srivastava <srivasta@debian.org>  Mon, 27 May 2002 02:09:28 -0500
+
+flex (2.5.4a-25) unstable; urgency=high
+
+  * In this version of flex, the first YYPROTO usage appears before the
+    definition of YYPROTO if _WIN32 is defined. Not so good. One should be
+    able to generate portable lexers with flex.              closes: Bug#145237
+
+ -- Manoj Srivastava <srivasta@debian.org>  Tue, 30 Apr 2002 12:53:45 -0500
+
+flex (2.5.4a-24) unstable; urgency=low
+
+  * Well, the symbol is really _WIN32. 
+  * Added clarifications about %option stdin to the flex man page (some
+    wording taken from CVS).
+
+ -- Manoj Srivastava <srivasta@debian.org>  Sun, 17 Mar 2002 10:32:13 -0600
+
+flex (2.5.4a-23) unstable; urgency=low
+
+  * Hmm. For non POSIX systems (well, where _Win32 is defined) where
+    unistd.h is not available, use the old isatty prototype.
+
+ -- Manoj Srivastava <srivasta@debian.org>  Wed,  6 Feb 2002 16:33:39 -0600
+
+flex (2.5.4a-22) unstable; urgency=low
+
+  * Interactive lexers were broken by the fic to handle interrupted
+    reads.                                                   closes: Bug#131242
+
+ -- Manoj Srivastava <srivasta@debian.org>  Mon, 28 Jan 2002 12:21:40 -0600
+
+flex (2.5.4a-21) unstable; urgency=low
+
+  * Hmm. Run aclocal on the acinclude file first.
+
+ -- Manoj Srivastava <srivasta@debian.org>  Fri, 25 Jan 2002 16:52:23 -0600
+
+flex (2.5.4a-20) unstable; urgency=low
+
+  * Add a build depends for autotconf, needed now that we make changes to
+    the script.                                              closes: Bug#130703
+
+ -- Manoj Srivastava <srivasta@debian.org>  Thu, 24 Jan 2002 16:32:25 -0600
+
+flex (2.5.4a-19) unstable; urgency=low
+
+  * For machines that do not use the GNU libc (and thus, does not have
+    gettext as part of the libc), flex failed to compile. The grep package
+    has a macro to handle exactly this situation, elegantly,  which is
+    labelled as available for public use, in it's aclocal.m4 file. This
+    version of flex uses that. Many thanks to Joel Baker
+    <lucifer@lightbearer.com> for discovering and testing this fix. 
+                                                             closes: Bug#130220
+
+ -- Manoj Srivastava <srivasta@debian.org>  Thu, 24 Jan 2002 10:07:16 -0600
+
+flex (2.5.4a-18) unstable; urgency=low
+
+  * Make sure that unistd.h is actually included, since we no longer
+    provide a prototype for isatty.                           closes: Bug#97131
+
+ -- Manoj Srivastava <srivasta@debian.org>  Sun, 13 Jan 2002 01:02:26 -0600
+
+flex (2.5.4a-17) unstable; urgency=medium
+
+  * AAArgggh. Fix a missing open brace in the generated YY_INPUT, Many
+    thanks to Bruce Stephens for catching these quickly.   
+
+ -- Manoj Srivastava <srivasta@debian.org>  Thu, 10 Jan 2002 13:14:35 -0600
+
+flex (2.5.4a-16) unstable; urgency=medium
+
+  * Fix a missing \ in the generated YY_INPUT macro.         closes: Bug#128412
+  * Fix buggy isatty prototype by not actually including a prototype (we
+    include the relevant header file, after all.             closes: Bug#97131
+
+ -- Manoj Srivastava <srivasta@debian.org>  Wed,  9 Jan 2002 11:51:12 -0600
+
+flex (2.5.4a-15) unstable; urgency=low
+
+  * if a signal is delivered while the parser is in the read routine
+    (coded by flex), the result is flex reports and YY_FATAL_ERROR causing
+    plan to exit.  The race condition appears much more frequently than
+    one might expect because plan spends a good deal of time in read
+    routine while gcc is preparing the input. I cleaned up another problem
+    case beyond what is given in the patch.                  closes: Bug#125611
+  * flex -o "ddd" doesn't write to the file "ddd", instead it tries to
+    write to the file "" (yes, blank) and read from "ddd". I changed the
+    main.c to use the next arg as the output file name if the next arg
+    does not start with a -.                                 closes: Bug#122581
+
+ -- Manoj Srivastava <srivasta@debian.org>  Sun,  6 Jan 2002 05:12:37 -0600
+
+flex (2.5.4a-14) unstable; urgency=low
+
+  * The flex-doc menu entry (/usr/lib/menu/flex-doc) contains some
+    unquoted double quotes in its extended description, and these needed
+    to be quoted so as not to confuse update menu. (why did it not
+    generate an error?) closes: Bug#105272
+  * The version 2.5.4a-12 was duplicated work with the previous maintainer
+    (and I take the blame for the lack of communication). I have also
+    managed to mosplace the changelog entry ;-(
+
+ -- Manoj Srivastava <srivasta@debian.org>  Tue, 17 Jul 2001 17:50:25 -0500
+
+flex (2.5.4a-13) unstable; urgency=low
+
+  * I took over flex, and have brought the rules and pre/post inst files
+    into line with my conventions.
+  * flex generates c++ that does not use istream and ostream from the
+    "std" namespace, so compilation of generated code fails. closes: Bug#104067
+    Please note that this duplicates and replaces the work done in 2.5.4a-12
+  
+ -- Manoj Srivastava <srivasta@debian.org>  Thu, 12 Jul 2001 15:48:24 -0500
+
+flex (2.5.4a-12) unstable; urgency=low
+
+  * Generate c++ which uses istream and ostream from the "std" namespace
+    for g++-3.0. Patch by Dale E. Martin (Closes: #104067).
+  * Registered HTML docs using doc-base.
+
+ -- Santiago Vila <sanvila@debian.org>  Thu, 12 Jul 2001 14:21:18 +0200
+
+flex (2.5.4a-11) unstable; urgency=low
+
+  * Added i18n support. Build-Depends: gettext. Closes: #46838.
+    Thanks to Changwoo Ryu <cwryu@adam.kaist.ac.kr>.
+  * Fixed formatting error in flex(1). Closes: #90284.
+    Thanks to Colin Watson <cjw44@flatline.org.uk>.
+
+ -- Santiago Vila <sanvila@debian.org>  Sun, 25 Mar 2001 14:07:51 +0200
+
+flex (2.5.4a-10) unstable; urgency=low
+
+  * Changed @section by @chapter to make texi2html happy.
+    Patch by Gordon Sadler <gbsadler1@lcisp.com>. Closes: #84780.
+  * Build-Depends-Indep: texi2html. Closes: #87689.
+  * Build-Depends: texinfo, since .texi is now modified.
+
+ -- Santiago Vila <sanvila@debian.org>  Mon, 26 Feb 2001 20:16:54 +0100
+
+flex (2.5.4a-9) unstable; urgency=low
+
+  * Fixed manpage again. Additional patch by the author.
+
+ -- Santiago Vila <sanvila@debian.org>  Fri,  1 Dec 2000 19:58:41 +0100
+
+flex (2.5.4a-8) unstable; urgency=low
+
+  * Added missing bracket in flex manpage (Closes: Bug#68941).
+
+ -- Santiago Vila <sanvila@debian.org>  Sat, 19 Aug 2000 16:56:22 +0200
+
+flex (2.5.4a-7) unstable; urgency=low
+
+  * Updated upstream source URL (Closes: Bug#67233).
+  * Standards-Version: 3.1.1.
+  * Build-Depends: bison.
+
+ -- Santiago Vila <sanvila@debian.org>  Fri,  4 Aug 2000 13:04:28 +0200
+
+flex (2.5.4a-6) unstable; urgency=low
+
+  * Applied a patch by Kristoffer Rose for large flex tables.
+
+ -- Santiago Vila <sanvila@ctv.es>  Tue,  7 Dec 1999 17:52:01 +0100
+
+flex (2.5.4a-5) unstable; urgency=low
+
+  * Fixed Bug #47860: flex segfaults. Patch by the author.
+
+ -- Santiago Vila <sanvila@ctv.es>  Wed, 10 Nov 1999 11:44:06 +0100
+
+flex (2.5.4a-4) unstable; urgency=low
+
+  * Recommends: c-compiler, instead of gcc (Bug #33937).
+  * Info unregistering done in prerm, not in postrm.
+
+ -- Santiago Vila <sanvila@ctv.es>  Fri,  5 Mar 1999 17:20:30 +0100
+
+flex (2.5.4a-3) unstable; urgency=low
+
+  * Added HTML docs, in a separate package.
+
+ -- Santiago Vila <sanvila@ctv.es>  Tue, 13 Oct 1998 21:14:28 +0200
+
+flex (2.5.4a-2) unstable; urgency=low
+
+  * Added a man page for flex++ (actually, a symlink to flex).
+  * ftp.gnu.org is FSF's new FTP site name.
+  * Compressed changelog.Debian.
+  * Removed debstd dependency.
+
+ -- Santiago Vila <sanvila@ctv.es>  Thu, 12 Mar 1998 20:25:09 +0100
+
+flex (2.5.4a-1) unstable; urgency=low
+
+  * New upstream release, using pristine untouched source.
+  * Removed the modified debstd from the source package now that the
+    standard one is fixed.
+  * First libc6 release.
+
+ -- Santiago Vila <sanvila@ctv.es>  Thu,  7 Aug 1997 19:15:34 +0200
+
+flex (2.5.4-2) unstable; urgency=low
+
+  * libfl.a stripped using strip -g, using a modified debstd which
+    is included in the Debian source package.
+
+ -- Santiago Vila <sanvila@ctv.es>  Thu, 13 Mar 1997 09:44:28 +0100
+
+flex (2.5.4-1) unstable; urgency=low
+
+  * Converted to Standards 2.1.2.2.
+  * New upstream version.
+  * Compiled with -D_REENTRANT.
+  * Added MD5 sums.
+  * New maintainer.
+
+ -- Santiago Vila <sanvila@ctv.es>  Sat, 22 Feb 1997 18:00:09 +0100
+
+
